@@ -52,4 +52,12 @@ struct AccountServices {
                                                                             
     }
     
+    func convertDateFromISODateString(isoDate: String) -> Date {
+        var appendedIsoDate = isoDate
+        appendedIsoDate.append("+0000")
+        let dateFormatter = ISO8601DateFormatter()
+        let date = dateFormatter.date(from: appendedIsoDate)!
+        return date
+    }
+    
 }

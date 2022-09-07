@@ -56,13 +56,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 175, height: 175)
+        let dimension = (collectionView.frame.width - 20) / 2
+        return CGSize(width: dimension, height: dimension)
     }
+    
     
     // MARK: - API Delegate Methods
     
     func onVideoResponse(videos: [Video]) {
-        self.videos = videos
+        self.videos = videos.sorted {
+            AccountServices().convertDateFromISODateString(isoDate: $0.releaseDate!)  < AccountServices().convertDateFromISODateString(isoDate: $1.releaseDate!) }
         collectionView.reloadData()
     }
     
