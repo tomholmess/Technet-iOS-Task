@@ -15,7 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var emailIsValid: Bool = false
     var passworldIsValid: Bool = false
-    
+        
     var canLogin: Bool {
         get {
             return emailIsValid && passworldIsValid
@@ -57,9 +57,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @objc func handleLogin() {
         if emailIsValid && passworldIsValid {
-            print("SUCCESS")
-        } else {
-            print("FAILURE")
+            let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
         }
     }
 }

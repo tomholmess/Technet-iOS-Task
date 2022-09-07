@@ -62,6 +62,73 @@
             </objects>
             <point key="canvasLocation" x="122" y="108"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="aqu-Fm-CsA">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RfA-sI-H8W" customClass="HomeViewController" customModule="Technet_iOS_Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Op-kC-Xgm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wfs-Bb-g1x">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fEf-Hi-lHe">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="N7n-BO-rBW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Wfs-Bb-g1x" firstAttribute="top" secondItem="N7n-BO-rBW" secondAttribute="top" id="6Kf-Eg-gBm"/>
+                            <constraint firstItem="N7n-BO-rBW" firstAttribute="bottom" secondItem="Wfs-Bb-g1x" secondAttribute="bottom" id="XbB-Vl-Gcc"/>
+                            <constraint firstItem="N7n-BO-rBW" firstAttribute="trailing" secondItem="Wfs-Bb-g1x" secondAttribute="trailing" id="oRX-gK-uLQ"/>
+                            <constraint firstItem="Wfs-Bb-g1x" firstAttribute="leading" secondItem="N7n-BO-rBW" secondAttribute="leading" id="s6B-Zo-JHL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Wfs-Bb-g1x" id="Esq-Rm-XB7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kCd-s7-PaG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888.40579710144937" y="107.8125"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OsH-3R-x1u">
+            <objects>
+                <viewController storyboardIdentifier="IDViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mR5-2U-apm" customClass="IDViewController" customModule="Technet_iOS_Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="31n-nX-Tq9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFJ-gX-d88">
+                                <rect key="frame" x="170" y="430" width="74.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JnA-Tp-bGF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CFJ-gX-d88" firstAttribute="centerY" secondItem="31n-nX-Tq9" secondAttribute="centerY" id="OmY-QY-4dH"/>
+                            <constraint firstItem="CFJ-gX-d88" firstAttribute="centerX" secondItem="31n-nX-Tq9" secondAttribute="centerX" id="Sr5-gH-d0n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="idLabel" destination="CFJ-gX-d88" id="BRe-cG-uLz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R9p-fo-6KK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1632" y="108"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
