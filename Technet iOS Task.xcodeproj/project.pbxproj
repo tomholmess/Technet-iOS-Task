@@ -15,10 +15,11 @@
 		A604A59F28C87BFC00740880 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A604A59D28C87BFC00740880 /* Main.storyboard */; };
 		A604A5A128C87BFC00740880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A604A5A028C87BFC00740880 /* Assets.xcassets */; };
 		A604A5A428C87BFC00740880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A604A5A228C87BFC00740880 /* LaunchScreen.storyboard */; };
-		A604A5AC28C8827900740880 /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604A5AB28C8827900740880 /* AccountServices.swift */; };
+		A604A5AC28C8827900740880 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604A5AB28C8827900740880 /* AppServices.swift */; };
 		A604A5AE28C8870B00740880 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604A5AD28C8870B00740880 /* Extensions.swift */; };
 		A604A5B228C8881E00740880 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604A5B128C8881E00740880 /* HomeViewController.swift */; };
 		A63CDEC428C8AACC0073A99B /* IDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63CDEC328C8AACC0073A99B /* IDViewController.swift */; };
+		A6C1C5C728C8CCFB005A9BA2 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C1C5C628C8CCFB005A9BA2 /* ImageViewerViewController.swift */; };
 		A6E8F8D228C88982007DF46E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8F8D128C88982007DF46E /* APIService.swift */; };
 		A6E8F8D528C88B3C007DF46E /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E8F8D428C88B3C007DF46E /* Video.swift */; };
 		BDF7F05693ABA3DD052362D0 /* Pods_Technet_iOS_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9857E0C44FF0377A33443791 /* Pods_Technet_iOS_Task.framework */; };
@@ -38,10 +39,11 @@
 		A604A5A028C87BFC00740880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A604A5A328C87BFC00740880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A604A5A528C87BFC00740880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A604A5AB28C8827900740880 /* AccountServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServices.swift; sourceTree = "<group>"; };
+		A604A5AB28C8827900740880 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		A604A5AD28C8870B00740880 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A604A5B128C8881E00740880 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A63CDEC328C8AACC0073A99B /* IDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDViewController.swift; sourceTree = "<group>"; };
+		A6C1C5C628C8CCFB005A9BA2 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
 		A6E8F8D128C88982007DF46E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A6E8F8D428C88B3C007DF46E /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 				A604A59B28C87BFC00740880 /* LoginViewController.swift */,
 				A604A5B128C8881E00740880 /* HomeViewController.swift */,
 				A63CDEC328C8AACC0073A99B /* IDViewController.swift */,
+				A6C1C5C628C8CCFB005A9BA2 /* ImageViewerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -116,7 +119,7 @@
 		A604A5B028C887FD00740880 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A604A5AB28C8827900740880 /* AccountServices.swift */,
+				A604A5AB28C8827900740880 /* AppServices.swift */,
 				A6E8F8D128C88982007DF46E /* APIService.swift */,
 			);
 			path = Services;
@@ -267,8 +270,9 @@
 				A6E8F8D228C88982007DF46E /* APIService.swift in Sources */,
 				A602DFEB28C8A5D500222526 /* ImageCell.swift in Sources */,
 				A6E8F8D528C88B3C007DF46E /* Video.swift in Sources */,
+				A6C1C5C728C8CCFB005A9BA2 /* ImageViewerViewController.swift in Sources */,
 				A604A59C28C87BFC00740880 /* LoginViewController.swift in Sources */,
-				A604A5AC28C8827900740880 /* AccountServices.swift in Sources */,
+				A604A5AC28C8827900740880 /* AppServices.swift in Sources */,
 				A604A59828C87BFC00740880 /* AppDelegate.swift in Sources */,
 				A63CDEC428C8AACC0073A99B /* IDViewController.swift in Sources */,
 				A604A59A28C87BFC00740880 /* SceneDelegate.swift in Sources */,

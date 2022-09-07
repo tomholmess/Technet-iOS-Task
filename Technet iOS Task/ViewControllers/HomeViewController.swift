@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 import SDWebImage
 
-class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, APIServiceDelegate {
+class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, APIServiceDelegate, UIContextMenuInteractionDelegate {
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     let url: String = "https://content-cache.watchcorridor.com/v6/interview"
@@ -17,6 +18,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     var videos = [Video]()
     
     var apiService = APIService()
+    
+    let appServices = AppServices()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +31,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         collectionView.delegate = self
         collectionView.clipsToBounds = false
         collectionView.register(UINib(nibName:"ImageCell", bundle: nil), forCellWithReuseIdentifier:"imageCell")
+        collectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(collectionViewLongPress)))
     }
+    
+    // MARK: Collection View Methods
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
@@ -40,7 +46,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         }
 
         cell.durationLabel.text = videos[indexPath.row].duration
-        
+        cell.addInteraction(UIContextMenuInteraction(delegate: self))
+    
         return cell
     }
     
@@ -60,13 +67,50 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         return CGSize(width: dimension, height: dimension)
     }
     
+    // MARK: - Context Menu Methods
+ 
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(
+            identifier: nil,
+            previewProvider: {
+                let vc = self.storyboard?.instantiateViewController(identifier: "imageViewerViewController") as! ImageViewerViewController
+                
+                let images = self.videos[indexPath.row].images
+                if let thumbnailImage = images?.first(where: { image in
+                    image.type == "thumbnail"
+                }) {
+                    vc.imageUrl = thumbnailImage.url
+                }
+                
+                vc.imageDescription = self.videos[indexPath.row].description
+                
+                return vc
+            })
+    }
+    
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: nil)
+    }
+    
     
     // MARK: - API Delegate Methods
     
     func onVideoResponse(videos: [Video]) {
         self.videos = videos.sorted {
-            AccountServices().convertDateFromISODateString(isoDate: $0.releaseDate!)  < AccountServices().convertDateFromISODateString(isoDate: $1.releaseDate!) }
+            appServices.convertDateFromISODateString(isoDate: $0.releaseDate!)
+            < appServices.convertDateFromISODateString(isoDate: $1.releaseDate!) }
         collectionView.reloadData()
+    }
+    
+    // MARK: - Gesture Methods
+    
+    @objc func collectionViewLongPress(_ gr: UILongPressGestureRecognizer) {
+        if gr.state == .began {
+            let loc = gr.location(in: collectionView)
+            if let index = collectionView.indexPathForItem(at: loc) {
+                // Handle popup out with description here
+            }
+        }
     }
     
 }

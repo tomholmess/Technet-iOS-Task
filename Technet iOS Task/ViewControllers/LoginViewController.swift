@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    let accountServices = AccountServices()
+    let appServices = AppServices()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +46,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - IBOutlet Target Functions
     
     @objc func emailTextFieldDidChange() {
-        emailIsValid = accountServices.isValidEmailAddress(emailAddressString: emailTextField.text!)
+        emailIsValid = appServices.isValidEmailAddress(emailAddressString: emailTextField.text!)
         emailTextField.rightView?.isHidden = !emailIsValid
     }
     
     @objc func passwordTextFieldDidChange() {
-        passworldIsValid = accountServices.isValidPassword(passwordString: passwordTextField.text!)
+        passworldIsValid = appServices.isValidPassword(passwordString: passwordTextField.text!)
         passwordTextField.rightView?.isHidden = !passworldIsValid
     }
     
