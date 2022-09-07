@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		A604A59828C87BFC00740880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604A59728C87BFC00740880 /* AppDelegate.swift */; };
 		A604A59A28C87BFC00740880 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604A59928C87BFC00740880 /* SceneDelegate.swift */; };
-		A604A59C28C87BFC00740880 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604A59B28C87BFC00740880 /* ViewController.swift */; };
+		A604A59C28C87BFC00740880 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604A59B28C87BFC00740880 /* LoginViewController.swift */; };
 		A604A59F28C87BFC00740880 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A604A59D28C87BFC00740880 /* Main.storyboard */; };
 		A604A5A128C87BFC00740880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A604A5A028C87BFC00740880 /* Assets.xcassets */; };
 		A604A5A428C87BFC00740880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A604A5A228C87BFC00740880 /* LaunchScreen.storyboard */; };
+		A604A5AC28C8827900740880 /* AccountServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604A5AB28C8827900740880 /* AccountServices.swift */; };
+		A604A5AE28C8870B00740880 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604A5AD28C8870B00740880 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A604A59428C87BFC00740880 /* Technet iOS Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Technet iOS Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A604A59728C87BFC00740880 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A604A59928C87BFC00740880 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A604A59B28C87BFC00740880 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A604A59B28C87BFC00740880 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A604A59E28C87BFC00740880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A604A5A028C87BFC00740880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A604A5A328C87BFC00740880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A604A5A528C87BFC00740880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A604A5AB28C8827900740880 /* AccountServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServices.swift; sourceTree = "<group>"; };
+		A604A5AD28C8870B00740880 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				A604A59728C87BFC00740880 /* AppDelegate.swift */,
 				A604A59928C87BFC00740880 /* SceneDelegate.swift */,
-				A604A59B28C87BFC00740880 /* ViewController.swift */,
+				A604A5AB28C8827900740880 /* AccountServices.swift */,
+				A604A59B28C87BFC00740880 /* LoginViewController.swift */,
 				A604A59D28C87BFC00740880 /* Main.storyboard */,
 				A604A5A028C87BFC00740880 /* Assets.xcassets */,
 				A604A5A228C87BFC00740880 /* LaunchScreen.storyboard */,
 				A604A5A528C87BFC00740880 /* Info.plist */,
+				A604A5AD28C8870B00740880 /* Extensions.swift */,
 			);
 			path = "Technet iOS Task";
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A604A59C28C87BFC00740880 /* ViewController.swift in Sources */,
+				A604A5AE28C8870B00740880 /* Extensions.swift in Sources */,
+				A604A59C28C87BFC00740880 /* LoginViewController.swift in Sources */,
+				A604A5AC28C8827900740880 /* AccountServices.swift in Sources */,
 				A604A59828C87BFC00740880 /* AppDelegate.swift in Sources */,
 				A604A59A28C87BFC00740880 /* SceneDelegate.swift in Sources */,
 			);
