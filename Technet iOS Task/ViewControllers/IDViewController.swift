@@ -17,6 +17,12 @@ class IDViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         idLabel.text = String(id)
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    }
+    
+    @objc func handleTap() {
+        self.dismiss(animated: true)
     }
     
 }

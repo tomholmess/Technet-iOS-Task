@@ -59,13 +59,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         return CGSize(width: 175, height: 175)
     }
     
-//    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
-//        return UIContextMenuConfiguration(
-//            identifier: nil,
-//            previewProvider: {
-//
-//            })
-//    }
+    // MARK: - API Delegate Methods
     
     func onVideoResponse(videos: [Video]) {
         self.videos = videos
