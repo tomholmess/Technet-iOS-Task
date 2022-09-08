@@ -27,17 +27,10 @@ class ImageViewerViewController: UIViewController {
             topImageView.sd_setImage(with: URL(string: url))
             bottomImageView.sd_setImage(with: URL(string: url))
             
-            blurImageView(imageView: topImageView)
-            blurImageView(imageView: bottomImageView)
+            topImageView.blurImageView(style: .regular)
+            bottomImageView.blurImageView(style: .regular)
         }
         
         descriptionLabel.text = imageDescription
-    }
-    
-    func blurImageView(imageView: UIImageView) {
-        let blurEffect = UIBlurEffect(style: .regular)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = imageView.bounds;
-        imageView.addSubview(blurView)
     }
 }

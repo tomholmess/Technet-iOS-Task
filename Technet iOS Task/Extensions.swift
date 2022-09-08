@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension UITextField {
-
     func setupRightImage(imageName: String) {
         let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 15, height: 15))
         imageView.image = UIImage(named: imageName)
@@ -18,5 +17,14 @@ extension UITextField {
         rightView = imageContainerView
         rightViewMode = .always
         self.tintColor = .lightGray
+    }
+}
+
+extension UIImageView {
+    func blurImageView(style: UIBlurEffect.Style) {
+        let blurEffect = UIBlurEffect(style: .regular)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = bounds;
+        addSubview(blurView)
     }
 }
