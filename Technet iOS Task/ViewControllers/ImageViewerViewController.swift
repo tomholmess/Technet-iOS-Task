@@ -11,28 +11,33 @@ import SDWebImage
 
 class ImageViewerViewController: UIViewController {
     
+    @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var bottomImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
     
     var imageUrl: String?
     var imageDescription: String?
-    var imageTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
         if let url = imageUrl {
-            titleLabel.isHidden = true
             mainImageView.sd_setImage(with: URL(string: url))
-        }
-        
-        if let title = titleLabel {
-            titleLabel.isHidden = true
-            titleLabel.text = imageTitle
+            topImageView.sd_setImage(with: URL(string: url))
+            bottomImageView.sd_setImage(with: URL(string: url))
+            
+            blurImageView(imageView: topImageView)
+            blurImageView(imageView: bottomImageView)
         }
         
         descriptionLabel.text = imageDescription
     }
     
+    func blurImageView(imageView: UIImageView) {
+        let blurEffect = UIBlurEffect(style: .regular)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = imageView.bounds;
+        imageView.addSubview(blurView)
+    }
 }
