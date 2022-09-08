@@ -18,9 +18,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     var videos = [Video]()
     
     var apiService = APIService()
-    
-    let appServices = AppServices()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -102,8 +100,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     
     func onVideoResponse(videos: [Video]) {
         self.videos = videos.sorted {
-            appServices.convertDateFromISODateString(isoDate: $0.releaseDate!)
-            < appServices.convertDateFromISODateString(isoDate: $1.releaseDate!) }
+            AppServices.convertDateFromISODateString(isoDate: $0.releaseDate!)
+            < AppServices.convertDateFromISODateString(isoDate: $1.releaseDate!) }
         collectionView.reloadData()
     }
     

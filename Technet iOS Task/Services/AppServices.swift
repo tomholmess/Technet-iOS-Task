@@ -9,11 +9,11 @@ import Foundation
 
 struct AppServices {
     
-    let passwordInvalidMessage = "Password must be at least 8 characters and include 1 uppercase letter, 1 lowercase letter and 1 special character"
-    let emailInvalidMessage = "Please provide a valid email address"
-    let invalidLoginMessage = "Please provide a valid email address and password"
+    static let passwordInvalidMessage = "Password must be at least 8 characters and include 1 uppercase letter, 1 lowercase letter and 1 special character"
+    static let emailInvalidMessage = "Please provide a valid email address"
+    static let invalidLoginMessage = "Please provide a valid email address and password"
     
-    func isValidEmailAddress(emailAddressString: String) -> Bool {
+    static func isValidEmailAddress(emailAddressString: String) -> Bool {
       var returnValue = true
       let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
       
@@ -34,7 +34,7 @@ struct AppServices {
       return returnValue
   }
     
-    func isValidPassword(passwordString: String) -> Bool {
+    static func isValidPassword(passwordString: String) -> Bool {
         var returnValue = true
         let passwordRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
         
@@ -56,7 +56,7 @@ struct AppServices {
                                                                             
     }
     
-    func convertDateFromISODateString(isoDate: String) -> Date {
+    static func convertDateFromISODateString(isoDate: String) -> Date {
         var appendedIsoDate = isoDate
         appendedIsoDate.append("+0000")
         let dateFormatter = ISO8601DateFormatter()

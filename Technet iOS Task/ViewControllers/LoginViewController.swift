@@ -21,9 +21,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return emailIsValid && passworldIsValid
         }
     }
-    
-    let appServices = AppServices()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -55,12 +53,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - IBOutlet Target Functions
     
     @objc func emailTextFieldDidChange() {
-        emailIsValid = appServices.isValidEmailAddress(emailAddressString: emailTextField.text!)
+        emailIsValid = AppServices.isValidEmailAddress(emailAddressString: emailTextField.text!)
         emailTextField.rightView?.isHidden = !emailIsValid
     }
     
     @objc func passwordTextFieldDidChange() {
-        passworldIsValid = appServices.isValidPassword(passwordString: passwordTextField.text!)
+        passworldIsValid = AppServices.isValidPassword(passwordString: passwordTextField.text!)
         passwordTextField.rightView?.isHidden = !passworldIsValid
     }
     
@@ -70,17 +68,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             navigationController?.pushViewController(vc, animated: true)
         } else if emailIsValid && !passworldIsValid {
             // Show password invalid alert dialog
-            let alert = UIAlertController(title: "Password Invalid", message: appServices.passwordInvalidMessage, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Password Invalid", message: AppServices.passwordInvalidMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else if !emailIsValid && passworldIsValid {
             // Show email invalid alert dialog
-            let alert = UIAlertController(title: "Email Invalid", message: appServices.emailInvalidMessage, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Email Invalid", message: AppServices.emailInvalidMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
             // Show both invalid alert dialog
-            let alert = UIAlertController(title: "Invalid Login Details", message: appServices.invalidLoginMessage, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Invalid Login Details", message: AppServices.invalidLoginMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
