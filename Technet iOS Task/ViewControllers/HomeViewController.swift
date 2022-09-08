@@ -83,6 +83,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
                     image.type == "thumbnail"
                 }) {
                     vc.imageUrl = thumbnailImage.url
+                } else {
+                    vc.imageTitle = self.videos[indexPath.row].title
                 }
                 
                 vc.imageDescription = self.videos[indexPath.row].description

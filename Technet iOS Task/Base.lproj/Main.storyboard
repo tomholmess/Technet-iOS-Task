@@ -142,11 +142,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQ6-1a-ckq">
+                                <rect key="frame" x="60" y="439.5" width="294" height="17"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Q-1L-T6o">
-                                <rect key="frame" x="0.0" y="787" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="837.5" width="414" height="24.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa6-dr-YZa">
-                                        <rect key="frame" x="5" y="5" width="399" height="65"/>
+                                        <rect key="frame" x="5" y="5" width="399" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -158,21 +164,25 @@
                                     <constraint firstItem="Aa6-dr-YZa" firstAttribute="leading" secondItem="Q2Q-1L-T6o" secondAttribute="leading" constant="5" id="Ock-xX-49C"/>
                                     <constraint firstAttribute="bottom" secondItem="Aa6-dr-YZa" secondAttribute="bottom" constant="5" id="Yoo-PA-tOw"/>
                                     <constraint firstItem="Aa6-dr-YZa" firstAttribute="top" secondItem="Q2Q-1L-T6o" secondAttribute="top" constant="5" id="brn-XT-5qP"/>
-                                    <constraint firstAttribute="height" constant="75" id="poz-Lu-5Hs"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7wl-QK-o2z"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uQ6-1a-ckq" firstAttribute="leading" secondItem="7wl-QK-o2z" secondAttribute="leading" constant="60" id="3TJ-6G-Nun"/>
                             <constraint firstItem="7wl-QK-o2z" firstAttribute="bottom" secondItem="Q2Q-1L-T6o" secondAttribute="bottom" id="QHr-rN-DMO"/>
                             <constraint firstItem="7wl-QK-o2z" firstAttribute="trailing" secondItem="Q2Q-1L-T6o" secondAttribute="trailing" id="Tkd-gH-9z9"/>
+                            <constraint firstItem="uQ6-1a-ckq" firstAttribute="centerY" secondItem="Wck-8A-Ccb" secondAttribute="centerY" id="dMz-74-ETk"/>
+                            <constraint firstItem="7wl-QK-o2z" firstAttribute="trailing" secondItem="uQ6-1a-ckq" secondAttribute="trailing" constant="60" id="fb5-Dz-4rV"/>
                             <constraint firstItem="Q2Q-1L-T6o" firstAttribute="leading" secondItem="7wl-QK-o2z" secondAttribute="leading" id="uPE-Jm-dHJ"/>
+                            <constraint firstItem="uQ6-1a-ckq" firstAttribute="centerX" secondItem="Wck-8A-Ccb" secondAttribute="centerX" id="w1C-yt-gRJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="Aa6-dr-YZa" id="oJE-6O-zUT"/>
                         <outlet property="mainImageView" destination="1ak-EM-yxU" id="iGN-vj-iuz"/>
+                        <outlet property="titleLabel" destination="uQ6-1a-ckq" id="G6a-eB-bNB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6x-w4-FrF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
