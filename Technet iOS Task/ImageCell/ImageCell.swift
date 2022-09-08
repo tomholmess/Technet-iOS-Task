@@ -18,7 +18,7 @@ class ImageCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        durationWrapper.layer.cornerRadius = 7
+        durationWrapper.layer.cornerRadius = 7.5
         durationWrapper.layer.maskedCorners = [.layerMinXMinYCorner]
     }
 
