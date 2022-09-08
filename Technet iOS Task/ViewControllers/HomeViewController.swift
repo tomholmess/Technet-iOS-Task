@@ -65,8 +65,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let dimension = (collectionView.frame.width - 20) / 2
-        return CGSize(width: dimension, height: dimension)
+        let dimension = collectionView.frame.width / 2
+        return CGSize(width: dimension, height: dimension / (16 / 9))
     }
     
     // MARK: - Context Menu Methods
