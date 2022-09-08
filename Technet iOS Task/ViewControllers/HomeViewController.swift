@@ -32,6 +32,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         collectionView.clipsToBounds = false
         collectionView.register(UINib(nibName:"ImageCell", bundle: nil), forCellWithReuseIdentifier:"imageCell")
         collectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(collectionViewLongPress)))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(handleLogOut))
     }
     
     // MARK: Collection View Methods
@@ -57,7 +59,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(identifier: "IDViewController") as! IDViewController
-        vc.modalPresentationStyle = .fullScreen
         vc.id = videos[indexPath.row].id
         self.present(vc, animated: true)
     }
@@ -111,6 +112,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
                 // Handle popup out with description here
             }
         }
+    }
+    
+    @objc func handleLogOut() {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

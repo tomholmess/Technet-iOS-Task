@@ -29,6 +29,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         setup()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        emailTextField.text = ""
+        passwordTextField.text = ""
+        emailTextFieldDidChange()
+        passwordTextFieldDidChange()
+        emailTextField.becomeFirstResponder()
+    }
 
     func setup() {
         emailTextField.addTarget(self, action: #selector(emailTextFieldDidChange), for: .editingChanged)
@@ -58,8 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @objc func handleLogin() {
         if emailIsValid && passworldIsValid {
             let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
