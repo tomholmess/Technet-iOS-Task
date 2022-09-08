@@ -11,6 +11,7 @@ class ImageCell: UICollectionViewCell {
 
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

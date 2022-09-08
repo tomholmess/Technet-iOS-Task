@@ -44,7 +44,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         if let thumbnailImage = images?.first(where: { image in
             image.type == "thumbnail"
         }) {
+            cell.titleLabel.isHidden = true
             cell.mainImageView.sd_setImage(with: URL(string: thumbnailImage.url!))
+        } else {
+            cell.titleLabel.text = videos[indexPath.row].title
+            cell.titleLabel.isHidden = false
         }
 
         cell.durationLabel.text = videos[indexPath.row].duration
