@@ -8,6 +8,11 @@
 import Foundation
 
 struct AppServices {
+    
+    let passwordInvalidMessage = "Password must be at least 8 characters and include 1 uppercase letter, 1 lowercase letter and 1 special character"
+    let emailInvalidMessage = "Please provide a valid email address"
+    let invalidLoginMessage = "Please provide a valid email address and password"
+    
     func isValidEmailAddress(emailAddressString: String) -> Bool {
       var returnValue = true
       let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"

@@ -68,6 +68,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if emailIsValid && passworldIsValid {
             let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
             navigationController?.pushViewController(vc, animated: true)
+        } else if emailIsValid && !passworldIsValid {
+            // Show password invalid alert dialog
+            let alert = UIAlertController(title: "Password Invalid", message: appServices.passwordInvalidMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else if !emailIsValid && passworldIsValid {
+            // Show email invalid alert dialog
+            let alert = UIAlertController(title: "Email Invalid", message: appServices.emailInvalidMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            // Show both invalid alert dialog
+            let alert = UIAlertController(title: "Invalid Login Details", message: appServices.invalidLoginMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
