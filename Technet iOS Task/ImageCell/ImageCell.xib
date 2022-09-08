@@ -61,6 +61,7 @@
             <size key="customSize" width="190" height="190"/>
             <connections>
                 <outlet property="durationLabel" destination="D4l-mG-Ppi" id="7tT-Hs-51G"/>
+                <outlet property="durationWrapper" destination="xI8-aR-b8Y" id="9RI-t3-0vf"/>
                 <outlet property="mainImageView" destination="6iY-Io-ha5" id="axw-4E-Trp"/>
                 <outlet property="titleLabel" destination="67A-89-pYS" id="tjj-hV-vIW"/>
             </connections>
