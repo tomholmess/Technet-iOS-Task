@@ -29,7 +29,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         collectionView.delegate = self
         collectionView.clipsToBounds = false
         collectionView.register(UINib(nibName:"ImageCell", bundle: nil), forCellWithReuseIdentifier:"imageCell")
-        collectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(collectionViewLongPress)))
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(handleLogOut))
     }
@@ -106,16 +105,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }
     
     // MARK: - Gesture Methods
-    
-    @objc func collectionViewLongPress(_ gr: UILongPressGestureRecognizer) {
-        if gr.state == .began {
-            let loc = gr.location(in: collectionView)
-            if let index = collectionView.indexPathForItem(at: loc) {
-                // Handle popup out with description here
-            }
-        }
-    }
-    
+
     @objc func handleLogOut() {
         self.navigationController?.popViewController(animated: true)
     }
